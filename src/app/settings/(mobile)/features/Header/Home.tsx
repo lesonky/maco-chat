@@ -1,8 +1,10 @@
-import { Logo, MobileNavBar } from '@lobehub/ui';
+import { MobileNavBar } from '@lobehub/ui';
 import { memo } from 'react';
 
+import McLogo from '@/components/McLogo';
+
 const Header = memo(() => {
-  return <MobileNavBar center={<Logo type={'text'} />} />;
+  return <MobileNavBar center={<McLogo type={'text'} />} />;
 });
 
 export default Header;

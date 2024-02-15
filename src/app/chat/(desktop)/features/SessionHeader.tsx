@@ -1,10 +1,11 @@
-import { ActionIcon, Logo } from '@lobehub/ui';
+import { ActionIcon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import McLogo from '@/components/McLogo';
 import { DESKTOP_HEADER_ICON_SIZE } from '@/const/layoutTokens';
 import { useSessionStore } from '@/store/session';
 
@@ -28,7 +29,7 @@ const Header = memo(() => {
   return (
     <Flexbox className={styles.top} gap={16} padding={16}>
       <Flexbox distribution={'space-between'} horizontal>
-        <Logo className={styles.logo} size={36} type={'text'} />
+        <McLogo className={styles.logo} size={36} type={'text'} />
         <ActionIcon
           icon={MessageSquarePlus}
           onClick={() => createSession()}

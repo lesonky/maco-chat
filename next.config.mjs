@@ -24,8 +24,8 @@ const withPWA = nextPWA({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compress: isProd,
   basePath,
+  compress: isProd,
   experimental: {
     optimizePackageImports: [
       'emoji-mart',
@@ -51,16 +51,16 @@ const nextConfig = {
   },
   output: buildWithDocker ? 'standalone' : undefined,
 
+  reactStrictMode: true,
   rewrites: async () => [
     // due to google api not work correct in some countries
     // we need a proxy to bypass the restriction
-    { source: '/api/chat/google', destination: `${API_PROXY_ENDPOINT}/api/chat/google` },
-    { source: '/docs', destination: `${docsBasePath}/docs` },
-    { source: '/docs/zh', destination: `${docsBasePath}/docs/zh` },
-    { source: '/docs/en', destination: `${docsBasePath}/docs/en` },
-    { source: '/docs/:path*', destination: `${docsBasePath}/docs/:path*` },
+    { destination: `${API_PROXY_ENDPOINT}/api/chat/google`, source: '/api/chat/google' },
+    { destination: `${docsBasePath}/docs`, source: '/docs' },
+    { destination: `${docsBasePath}/docs/zh`, source: '/docs/zh' },
+    { destination: `${docsBasePath}/docs/en`, source: '/docs/en' },
+    { destination: `${docsBasePath}/docs/:path*`, source: '/docs/:path*' },
   ],
-  reactStrictMode: true,
 
   webpack(config) {
     config.experiments = {
@@ -71,11 +71,11 @@ const nextConfig = {
     // to fix shikiji compile error
     // refs: https://github.com/antfu/shikiji/issues/23
     config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
       resolve: {
         fullySpecified: false,
       },
+      test: /\.m?js$/,
+      type: 'javascript/auto',
     });
 
     return config;

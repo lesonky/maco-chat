@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import Avatar from 'next/image';
 import { CSSProperties, memo } from 'react';
 
-import { imageUrl } from '@/const/url';
+import McLogo from '@/components/McLogo';
 import { useGlobalStore } from '@/store/global';
 import { commonSelectors } from '@/store/global/selectors';
 import { imageToBase64 } from '@/utils/imageToBase64';
@@ -55,12 +55,11 @@ const AvatarWithUpload = memo<AvatarWithUploadProps>(
     return (
       <div className={styles} id={id} style={{ maxHeight: size, maxWidth: size, ...style }}>
         <Upload beforeUpload={handleUploadAvatar} itemRender={() => void 0} maxCount={1}>
-          <Avatar
-            alt={avatar ? 'userAvatar' : 'LobeChat'}
-            height={size}
-            src={!!avatar ? avatar : imageUrl('logo.png')}
-            width={size}
-          />
+          {avatar ? (
+            <Avatar alt={'avatar'} height={size} src={avatar} width={size} />
+          ) : (
+            <McLogo size={size} type={'3d'} />
+          )}
         </Upload>
       </div>
     );
