@@ -1,9 +1,10 @@
-import { ActionIcon, Avatar, Logo, MobileNavBar } from '@lobehub/ui';
+import { ActionIcon, Avatar, MobileNavBar } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
+import McLogo from '@/components/McLogo';
 import { MOBILE_HEADER_ICON_SIZE } from '@/const/layoutTokens';
 import { useGlobalStore } from '@/store/global';
 import { commonSelectors } from '@/store/global/selectors';
@@ -25,10 +26,10 @@ const Header = memo(() => {
   const avatar = useGlobalStore(commonSelectors.userAvatar);
   return (
     <MobileNavBar
-      center={<Logo type={'text'} />}
+      center={<McLogo type={'text'} />}
       left={
         <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
-          {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
+          {avatar ? <Avatar avatar={avatar} size={28} /> : <McLogo size={28} />}
         </div>
       }
       right={

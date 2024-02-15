@@ -1,11 +1,11 @@
-import { DraggablePanelBody, Logo } from '@lobehub/ui';
+import { DraggablePanelBody } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import McLogo from '@/components/McLogo';
 import FolderPanel from '@/features/FolderPanel';
 
-import UpgradeAlert from '../UpgradeAlert';
 import List from './List';
 
 const useStyles = createStyles(({ stylish, token, css }) => ({
@@ -27,11 +27,10 @@ const SideBar = memo(() => {
       <DraggablePanelBody className={styles.body} style={{ padding: 0 }}>
         <Flexbox className={styles.top} padding={16}>
           <div>
-            <Logo className={styles.logo} extra={'Settings'} size={36} type={'text'} />
+            <McLogo className={styles.logo} extra={'Settings'} size={36} type={'text'} />
           </div>
         </Flexbox>
         <Flexbox gap={2} style={{ paddingInline: 8 }}>
-          <UpgradeAlert />
           <List />
         </Flexbox>
       </DraggablePanelBody>

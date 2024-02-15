@@ -1,22 +1,11 @@
-import { ActionIcon, DiscordIcon, Icon } from '@lobehub/ui';
-import { Badge, ConfigProvider, Dropdown, MenuProps } from 'antd';
-import {
-  Book,
-  Feather,
-  FileClock,
-  Github,
-  HardDriveDownload,
-  HardDriveUpload,
-  Heart,
-  Settings,
-  Settings2,
-} from 'lucide-react';
+import { ActionIcon, Icon } from '@lobehub/ui';
+import { Dropdown, MenuProps } from 'antd';
+import { HardDriveDownload, HardDriveUpload, Settings, Settings2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import { ABOUT, CHANGELOG, DISCORD, FEEDBACK, GITHUB, WIKI } from '@/const/url';
 import DataImporter from '@/features/DataImporter';
 import { configService } from '@/services/config';
 import { GlobalStore, useGlobalStore } from '@/store/global';
@@ -31,12 +20,12 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
   const router = useRouter();
   const { t } = useTranslation('common');
 
-  const [hasNewVersion, useCheckLatestVersion] = useGlobalStore((s) => [
-    s.hasNewVersion,
-    s.useCheckLatestVersion,
-  ]);
+  // const [ useCheckLatestVersion] = useGlobalStore((s) => [
+  //   s.hasNewVersion,
+  //   s.useCheckLatestVersion,
+  // ]);
 
-  useCheckLatestVersion();
+  // useCheckLatestVersion();
 
   const items: MenuProps['items'] = [
     {
@@ -74,33 +63,33 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
       key: 'export',
       label: t('export'),
     },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <Icon icon={Feather} />,
-      key: 'feedback',
-      label: t('feedback'),
-      onClick: () => window.open(FEEDBACK, '__blank'),
-    },
-    {
-      icon: <Icon icon={FileClock} />,
-      key: 'changelog',
-      label: t('changelog'),
-      onClick: () => window.open(CHANGELOG, '__blank'),
-    },
-    {
-      icon: <Icon icon={Book} />,
-      key: 'wiki',
-      label: 'WIKI',
-      onClick: () => window.open(WIKI, '__blank'),
-    },
-    {
-      icon: <Icon icon={Heart} />,
-      key: 'about',
-      label: t('about'),
-      onClick: () => window.open(ABOUT, '__blank'),
-    },
+    // {
+    //   type: 'divider',
+    // },
+    // {
+    //   icon: <Icon icon={Feather} />,
+    //   key: 'feedback',
+    //   label: t('feedback'),
+    //   onClick: () => window.open(FEEDBACK, '__blank'),
+    // },
+    // {
+    //   icon: <Icon icon={FileClock} />,
+    //   key: 'changelog',
+    //   label: t('changelog'),
+    //   onClick: () => window.open(CHANGELOG, '__blank'),
+    // },
+    // {
+    //   icon: <Icon icon={Book} />,
+    //   key: 'wiki',
+    //   label: 'WIKI',
+    //   onClick: () => window.open(WIKI, '__blank'),
+    // },
+    // {
+    //   icon: <Icon icon={Heart} />,
+    //   key: 'about',
+    //   label: t('about'),
+    //   onClick: () => window.open(ABOUT, '__blank'),
+    // },
     {
       type: 'divider',
     },
@@ -109,7 +98,7 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
       key: 'setting',
       label: (
         <Flexbox align={'center'} distribution={'space-between'} gap={8} horizontal>
-          {t('setting')} {hasNewVersion && <Badge count={t('upgradeVersion.hasNew')} />}
+          {t('setting')}
         </Flexbox>
       ),
       onClick: () => {
@@ -123,34 +112,40 @@ const BottomActions = memo<BottomActionProps>(({ tab, setTab }) => {
     },
   ];
 
+  // return (
+  //   <>
+  //     <ActionIcon
+  //       icon={DiscordIcon}
+  //       onClick={() => window.open(DISCORD, '__blank')}
+  //       placement={'right'}
+  //       title={'Discord'}
+  //     />
+  //     <ActionIcon
+  //       icon={Github}
+  //       onClick={() => window.open(GITHUB, '__blank')}
+  //       placement={'right'}
+  //       title={'GitHub'}
+  //     />
+  //     <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
+  //       {hasNewVersion ? (
+  //         <Flexbox>
+  //           <ConfigProvider theme={{ components: { Badge: { dotSize: 8 } } }}>
+  //             <Badge dot offset={[-4, 4]}>
+  //               <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
+  //             </Badge>
+  //           </ConfigProvider>
+  //         </Flexbox>
+  //       ) : (
+  //         <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
+  //       )}
+  //     </Dropdown>
+  //   </>
+  // );
+
   return (
-    <>
-      <ActionIcon
-        icon={DiscordIcon}
-        onClick={() => window.open(DISCORD, '__blank')}
-        placement={'right'}
-        title={'Discord'}
-      />
-      <ActionIcon
-        icon={Github}
-        onClick={() => window.open(GITHUB, '__blank')}
-        placement={'right'}
-        title={'GitHub'}
-      />
-      <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
-        {hasNewVersion ? (
-          <Flexbox>
-            <ConfigProvider theme={{ components: { Badge: { dotSize: 8 } } }}>
-              <Badge dot offset={[-4, 4]}>
-                <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
-              </Badge>
-            </ConfigProvider>
-          </Flexbox>
-        ) : (
-          <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
-        )}
-      </Dropdown>
-    </>
+    <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
+      <ActionIcon active={tab === SidebarTabKey.Setting} icon={Settings2} />
+    </Dropdown>
   );
 });
 

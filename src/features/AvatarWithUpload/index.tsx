@@ -1,9 +1,9 @@
-import { Logo } from '@lobehub/ui';
 import { Upload } from 'antd';
 import { createStyles } from 'antd-style';
 import Avatar from 'next/image';
 import { CSSProperties, memo } from 'react';
 
+import McLogo from '@/components/McLogo';
 import { useGlobalStore } from '@/store/global';
 import { commonSelectors } from '@/store/global/selectors';
 import { imageToBase64 } from '@/utils/imageToBase64';
@@ -58,7 +58,7 @@ const AvatarWithUpload = memo<AvatarWithUploadProps>(
           {avatar ? (
             <Avatar alt={'avatar'} height={size} src={avatar} width={size} />
           ) : (
-            <Logo size={size} />
+            <McLogo size={size} type={'3d'} />
           )}
         </Upload>
       </div>

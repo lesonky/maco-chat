@@ -47,12 +47,12 @@ const nextConfig = {
   },
   output: buildWithDocker ? 'standalone' : undefined,
 
+  reactStrictMode: true,
   rewrites: async () => [
     // due to google api not work correct in some countries
     // we need a proxy to bypass the restriction
-    { source: '/api/chat/google', destination: `${API_PROXY_ENDPOINT}/api/chat/google` },
+    { destination: `${API_PROXY_ENDPOINT}/api/chat/google`, source: '/api/chat/google' },
   ],
-  reactStrictMode: true,
 
   webpack(config) {
     config.experiments = {
@@ -63,11 +63,11 @@ const nextConfig = {
     // to fix shikiji compile error
     // refs: https://github.com/antfu/shikiji/issues/23
     config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
       resolve: {
         fullySpecified: false,
       },
+      test: /\.m?js$/,
+      type: 'javascript/auto',
     });
 
     return config;
