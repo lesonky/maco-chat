@@ -4,7 +4,7 @@ import { getServerConfig } from '@/config/server';
 
 import pkg from '../../package.json';
 
-const title = 'LobeChat';
+const title = 'MacoChat';
 const { description, homepage } = pkg;
 
 const { METADATA_BASE_URL = 'https://chat-preview.lobehub.com/' } = getServerConfig();
@@ -49,7 +49,7 @@ const metadata: Metadata = {
 
   title: {
     default: title,
-    template: '%s · LobeChat',
+    template: '%s · MacoChat',
   },
   twitter: {
     card: 'summary_large_image',

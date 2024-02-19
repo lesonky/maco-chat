@@ -59,7 +59,7 @@ export const DEFAULT_LLM_CONFIG: GlobalLLMConfig = {
     secretAccessKey: '',
   },
   google: {
-    apiKey: 'AIzaSyDG_-A7Gww7nNWQc0K3zD2VxHDjplvxbfI',
+    apiKey: '',
     enabled: true,
   },
   moonshot: {
