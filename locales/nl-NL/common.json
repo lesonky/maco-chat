@@ -13,7 +13,7 @@
   "agentMaxToken": "Maximale sessielengte",
   "agentModel": "Model",
   "agentProfile": "Assistentprofiel",
-  "appInitializing": "LobeChat wordt geïnitialiseerd, even geduld a.u.b...",
+  "appInitializing": "MacoChat wordt geïnitialiseerd, even geduld a.u.b...",
   "archive": "Archief",
   "autoGenerate": "Automatisch genereren",
   "autoGenerateTooltip": "Automatisch assistentbeschrijving genereren op basis van suggesties",
@@ -132,9 +132,9 @@
   "telemetry": {
     "allow": "Toestaan",
     "deny": "Weigeren",
-    "desc": "We willen graag anonieme gebruiksgegevens verzamelen om LobeChat te verbeteren en een betere productervaring te bieden. Je kunt dit op elk moment uitschakelen in 'Instellingen' - 'Over'.",
+    "desc": "We willen graag anonieme gebruiksgegevens verzamelen om MacoChat te verbeteren en een betere productervaring te bieden. Je kunt dit op elk moment uitschakelen in 'Instellingen' - 'Over'.",
     "learnMore": "Meer informatie",
-    "title": "Help LobeChat verbeteren"
+    "title": "Help MacoChat verbeteren"
   },
   "temp": "临时",
   "updateAgent": "更新助理信息",

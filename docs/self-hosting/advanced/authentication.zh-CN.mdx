@@ -2,7 +2,7 @@ import { Callout, Steps } from 'nextra/components';
 
 # 身份验证服务
 
-LobeChat 支持配置外部身份验证服务，供企业 / 组织内部使用，统一管理用户授权，目前支持 [Auth0][auth0-client-page]，本文将介绍如何配置身份验证服务。
+MacoChat 支持配置外部身份验证服务，供企业 / 组织内部使用，统一管理用户授权，目前支持 [Auth0][auth0-client-page]，本文将介绍如何配置身份验证服务。
 
 ## 配置身份验证服务
 
@@ -38,17 +38,17 @@ http(s)://your-domain/api/auth/callback/auth0
 
 ### 新增用户
 
-点击左侧导航栏的「Users Management」，进入用户管理界面，可以为你的组织新建用户，用以登录 LobeChat
+点击左侧导航栏的「Users Management」，进入用户管理界面，可以为你的组织新建用户，用以登录 MacoChat
 
 ![](https://github.com/CloudPassenger/lobe-chat/assets/30863298/3b8127ab-dc4f-4ff9-a4cb-dec3ef0295cc)
 
 ### 配置环境变量
 
-在部署 LobeChat 时，你需要配置以下环境变量：
+在部署 MacoChat 时，你需要配置以下环境变量：
 
 | 环境变量 | 类型 | 描述 |
 | --- | --- | --- |
-| `ENABLE_OAUTH_SSO` | 必选 | 为 LobeChat 启用单点登录 (SSO)。设置为 `1` 以启用单点登录。 |
+| `ENABLE_OAUTH_SSO` | 必选 | 为 MacoChat 启用单点登录 (SSO)。设置为 `1` 以启用单点登录。 |
 | `NEXTAUTH_SECRET` | 必选 | 用于加密 Auth.js 会话令牌的密钥。您可以使用以下命令生成秘钥： `openssl rand -base64 32` |
 | `AUTH0_CLIENT_ID` | 必选 | Auth0 应用程序的 Client ID |
 | `AUTH0_CLIENT_SECRET` | 必选 | Auth0 应用程序的 Client Secret |
@@ -60,7 +60,7 @@ http(s)://your-domain/api/auth/callback/auth0
 
 </Steps>
 
-<Callout>部署成功后，用户将可以使用 Auth0 中配置的用户通过身份认证并使用 LobeChat。</Callout>
+<Callout>部署成功后，用户将可以使用 Auth0 中配置的用户通过身份认证并使用 MacoChat。</Callout>
 
 ## 进阶配置
 
@@ -79,7 +79,7 @@ Auth0 支持 Azure Active Directory / Slack / Google Workspace / Office 365 / Zo
 ![](https://github.com/CloudPassenger/lobe-chat/assets/30863298/7b6f6a6c-2686-49d8-9dbd-0516053f1efa)
 
 <Callout type={'warning'}>
-  配置社交登录服务默认会允许所有人通过认证，这可能会导致 LobeChat 被外部人员滥用。
+  配置社交登录服务默认会允许所有人通过认证，这可能会导致 MacoChat 被外部人员滥用。
 </Callout>
 <Callout>
   如果你需要限制登录人员，务必配置 **阻止策略**： 请在打开社交登录选项后，参考

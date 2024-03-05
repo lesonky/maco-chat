@@ -32,7 +32,7 @@ export const DEFAULT_AGENT_CONFIG: LobeAgentConfig = {
   displayMode: 'chat',
   enableAutoCreateTopic: true,
   historyCount: 1,
-  model: 'gpt-3.5-turbo',
+  model: 'gemini-pro',
   params: {
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -40,7 +40,7 @@ export const DEFAULT_AGENT_CONFIG: LobeAgentConfig = {
     top_p: 1,
   },
   plugins: [],
-  provider: ModelProvider.OpenAI,
+  provider: ModelProvider.Google,
   systemRole: '',
   tts: DEFAUTT_AGENT_TTS_CONFIG,
 };
@@ -59,7 +59,7 @@ export const DEFAULT_LLM_CONFIG: GlobalLLMConfig = {
     secretAccessKey: '',
   },
   google: {
-    apiKey: 'AIzaSyDG_-A7Gww7nNWQc0K3zD2VxHDjplvxbfI',
+    apiKey: '',
     enabled: true,
   },
   moonshot: {
@@ -72,7 +72,7 @@ export const DEFAULT_LLM_CONFIG: GlobalLLMConfig = {
   },
   openAI: {
     OPENAI_API_KEY: '',
-    enabled: true,
+    enabled: false,
     models: [],
   },
   perplexity: {

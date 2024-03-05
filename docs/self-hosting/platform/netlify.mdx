@@ -1,16 +1,16 @@
 import { Callout, Steps } from 'nextra/components';
 
-# Deploy LobeChat with Netlify
+# Deploy MacoChat with Netlify
 
-If you want to deploy LobeChat on Netlify, you can follow these steps:
+If you want to deploy MacoChat on Netlify, you can follow these steps:
 
-## Deploy LobeChat with Netlify
+## Deploy MacoChat with Netlify
 
 <Steps>
 
-### Fork the LobeChat Repository
+### Fork the MacoChat Repository
 
-Click the Fork button to fork the LobeChat repository to your GitHub account.
+Click the Fork button to fork the MacoChat repository to your GitHub account.
 
 ### Prepare your OpenAI API Key
 
@@ -43,10 +43,10 @@ Then click "Deploy with Github" and authorize Netlify to access your GitHub acco
   height={273}
 />
 
-Next, select the LobeChat project:
+Next, select the MacoChat project:
 
 <Image
-  alt={'Select the LobeChat github project'}
+  alt={'Select the MacoChat github project'}
   src={'https://github.com/lobehub/lobe-chat/assets/28616219/6c3968a8-fbbb-4268-a587-edaced2d96af'}
   bordered
   inStep
@@ -58,7 +58,7 @@ Next, select the LobeChat project:
 In this step, you need to configure your site, including the site name, build command, and publish directory. Fill in your site name in the "Site Name" field. If there are no special requirements, you do not need to modify the remaining configurations as we have already set the default configurations.
 
 <Image
-  alt={'Configure LobeChat site name'}
+  alt={'Configure MacoChat site name'}
   src={'https://github.com/lobehub/lobe-chat/assets/28616219/f3885537-6d43-422f-b1b8-e70732401025'}
   bordered
   inStep
@@ -68,7 +68,7 @@ In this step, you need to configure your site, including the site name, build co
 Click the "Add environment variables" button to add site environment variables:
 
 <Image
-  alt={'Add LobeChat site environment variables'}
+  alt={'Add MacoChat site environment variables'}
   src={'https://github.com/lobehub/lobe-chat/assets/28616219/3b607482-4d99-455a-bc10-3090dd4fe3c5'}
   bordered
   inStep
@@ -84,7 +84,7 @@ Taking OpenAI as an example, the environment variables you need to add are as fo
 | `OPENAI_PROXY_URL` | Optional | If you manually configure the OpenAI interface proxy, you can use this configuration to override the default OpenAI API request base URL | `https://aihubmix.com/v1`, default value: `https://api.openai.com/v1` |
 
 <Callout type={'info'}>
-  For a complete list of environment variables supported by LobeChat, please refer to the [📘
+  For a complete list of environment variables supported by MacoChat, please refer to the [📘
   Environment Variables](/en/self-hosting/environment-variables)
 </Callout>
 
@@ -110,10 +110,10 @@ After clicking deploy, you will enter the site details page, where you can click
   height={396}
 />
 
-Upon entering the deployment details, you will see the following interface, indicating that your LobeChat is currently being deployed. Simply wait for the deployment to complete.
+Upon entering the deployment details, you will see the following interface, indicating that your MacoChat is currently being deployed. Simply wait for the deployment to complete.
 
 <Image
-  alt={'LobeChat deployment in progress'}
+  alt={'MacoChat deployment in progress'}
   src={'https://github.com/lobehub/lobe-chat/assets/28616219/1ed8b13d-046e-47c8-bd61-116ffdf5d01b'}
   bordered
   inStep
@@ -132,7 +132,7 @@ During the deployment and build process:
 
 ### Deployment Successful, Start Using
 
-If your Deploy Log in the interface looks like the following, it means your LobeChat has been successfully deployed.
+If your Deploy Log in the interface looks like the following, it means your MacoChat has been successfully deployed.
 
 <Image
   alt={'Deployment Successful'}
@@ -141,10 +141,10 @@ If your Deploy Log in the interface looks like the following, it means your Lobe
   inStep
   height={558}
 />
-At this point, you can click on "Open production deploy" to access your LobeChat site.
+At this point, you can click on "Open production deploy" to access your MacoChat site.
 
 <Image
-  alt={'Access Your LobeChat Site'}
+  alt={'Access Your MacoChat Site'}
   src={'https://github.com/lobehub/lobe-chat/assets/28616219/b04723eb-64ad-4028-a901-dc4e4ee2d0c1'}
   bordered
   inStep

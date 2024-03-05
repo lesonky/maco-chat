@@ -37,7 +37,7 @@ const GoogleProvider = memo(() => {
         },
       ]}
       provider={providerKey}
-      title={<Google.BrandColor size={28} />}
+      title={<Google.BrandColor size={28} style={{ width: 64 }} />}
     />
   );
 });

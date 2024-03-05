@@ -2,7 +2,7 @@ import { Callout, Steps } from 'nextra/components';
 
 # Identity Verification Service
 
-LobeChat supports configuring external identity verification services for internal use by enterprises/organizations to centrally manage user authorization. Currently, it supports [Auth0][auth0-client-page]. This article will introduce how to configure the identity verification service.
+MacoChat supports configuring external identity verification services for internal use by enterprises/organizations to centrally manage user authorization. Currently, it supports [Auth0][auth0-client-page]. This article will introduce how to configure the identity verification service.
 
 ## Configure Identity Verification Service
 
@@ -37,17 +37,17 @@ http(s)://your-domain/api/auth/callback/auth0
 
 ### Add Users
 
-Click on the "Users Management" in the left navigation bar to enter the user management interface, where you can create users for your organization to log in to LobeChat.
+Click on the "Users Management" in the left navigation bar to enter the user management interface, where you can create users for your organization to log in to MacoChat.
 
 ![](https://github.com/CloudPassenger/lobe-chat/assets/30863298/3b8127ab-dc4f-4ff9-a4cb-dec3ef0295cc)
 
 ### Configure Environment Variables
 
-When deploying LobeChat, you need to configure the following environment variables:
+When deploying MacoChat, you need to configure the following environment variables:
 
 | Environment Variable | Type | Description |
 | --- | --- | --- |
-| `ENABLE_OAUTH_SSO` | Required | Enable single sign-on (SSO) for LobeChat. Set to `1` to enable single sign-on. |
+| `ENABLE_OAUTH_SSO` | Required | Enable single sign-on (SSO) for MacoChat. Set to `1` to enable single sign-on. |
 | `NEXTAUTH_SECRET` | Required | Key used to encrypt Auth.js session tokens. You can generate a key using the following command: `openssl rand -base64 32` |
 | `AUTH0_CLIENT_ID` | Required | Client ID of the Auth0 application |
 | `AUTH0_CLIENT_SECRET` | Required | Client Secret of the Auth0 application |
@@ -60,7 +60,7 @@ You can refer to the related variable details at [Environment Variables](/en/sel
 </Steps>
 
 <Callout>
-  After successful deployment, users will be able to authenticate and use LobeChat using the users
+  After successful deployment, users will be able to authenticate and use MacoChat using the users
   configured in Auth0.
 </Callout>
 
@@ -82,7 +82,7 @@ If your enterprise or organization needs to support external user logins, you ca
 
 <Callout type={'warning'}>
   Configuring social login services by default allows anyone to authenticate, which may lead to
-  LobeChat being abused by external users.
+  MacoChat being abused by external users.
 </Callout>
 <Callout>
   If you need to restrict login users, be sure to configure a **blocking policy**: After enabling

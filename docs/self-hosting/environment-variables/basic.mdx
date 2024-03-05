@@ -2,39 +2,39 @@ import { Callout } from 'nextra/components';
 
 # Environment Variables
 
-LobeChat provides some additional configuration options during deployment, which can be customized using environment variables.
+MacoChat provides some additional configuration options during deployment, which can be customized using environment variables.
 
 ## Common Variables
 
 ### `ACCESS_CODE`
 
 - Type: Optional
-- Description: Add a password to access the LobeChat service. You can set a long password to prevent brute force attacks.
+- Description: Add a password to access the MacoChat service. You can set a long password to prevent brute force attacks.
 - Default: -
 - Example: `awCTe)re_r74` or `rtrt_ewee3@09!`
 
 ### `ENABLE_OAUTH_SSO`
 
 - Type: Optional
-- Description: Enable Single Sign-On (SSO) for LobeChat. Set to `1` to enable SSO. For more information, see [Authentication Services](#authentication-services).
+- Description: Enable Single Sign-On (SSO) for MacoChat. Set to `1` to enable SSO. For more information, see [Authentication Services](#authentication-services).
 - Default: -
 - Example: `1`
 
 ### `NEXT_PUBLIC_BASE_PATH`
 
 - Type: Optional
-- Description: Add a `basePath` for LobeChat.
+- Description: Add a `basePath` for MacoChat.
 - Default: -
 - Example: `/test`
 
 ### `DEFAULT_AGENT_CONFIG`
 
 - Type: Optional
-- Description: Used to configure the default settings for the LobeChat default agent. It supports various data types and structures, including key-value pairs, nested fields, array values, and more.
+- Description: Used to configure the default settings for the MacoChat default agent. It supports various data types and structures, including key-value pairs, nested fields, array values, and more.
 - Default: -
 - Example: `'model=gpt-4-1106-preview;params.max_tokens=300;plugins=search-engine,lobe-image-designer`
 
-The `DEFAULT_AGENT_CONFIG` is used to configure the default settings for the LobeChat default agent. It supports various data types and structures, including key-value pairs, nested fields, array values, and more. The table below provides detailed information on the configuration options, examples, and corresponding explanations for the `DEFAULT_AGENT_CONFIG` environment variable:
+The `DEFAULT_AGENT_CONFIG` is used to configure the default settings for the MacoChat default agent. It supports various data types and structures, including key-value pairs, nested fields, array values, and more. The table below provides detailed information on the configuration options, examples, and corresponding explanations for the `DEFAULT_AGENT_CONFIG` environment variable:
 
 | Configuration Type | Example | Explanation |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ Further reading:
 #### `ENABLE_OAUTH_SSO`
 
 - Type: Required
-- Description: Enable single sign-on (SSO) for LobeChat. Set to `1` to enable single sign-on.
+- Description: Enable single sign-on (SSO) for MacoChat. Set to `1` to enable single sign-on.
 - Default: `-`
 - Example: `1`
 
@@ -112,7 +112,7 @@ Further reading:
 ### `PLUGINS_INDEX_URL`
 
 - Type: Optional
-- Description: Index address of the LobeChat plugin market. If you have deployed the plugin market service on your own, you can use this variable to override the default plugin market address.
+- Description: Index address of the MacoChat plugin market. If you have deployed the plugin market service on your own, you can use this variable to override the default plugin market address.
 - Default: `https://chat-plugins.lobehub.com`
 
 ### `PLUGIN_SETTINGS`
@@ -141,7 +141,7 @@ The above example sets the `SERPAPI_API_KEY` of the `search-engine` plugin to `x
 ### `AGENTS_INDEX_URL`
 
 - Type: Optional
-- Description: Index address of the LobeChat assistant market. If you have deployed the assistant market service on your own, you can use this variable to override the default market address.
+- Description: Index address of the MacoChat assistant market. If you have deployed the assistant market service on your own, you can use this variable to override the default market address.
 - Default: `https://chat-agents.lobehub.com`
 
 ## Data Statistics

@@ -13,7 +13,7 @@ export interface AgentsMarketIndexItem {
 
 export type AgentsMarketItem = AgentsMarketIndexItem & LobeAgentSettings;
 
-export interface LobeChatAgentsMarketIndex {
+export interface MacoChatAgentsMarketIndex {
   agents: AgentsMarketIndexItem[];
   schemaVersion: 1;
   tags: string[];

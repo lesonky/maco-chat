@@ -13,7 +13,7 @@
   "agentMaxToken": "Longueur maximale de la session",
   "agentModel": "Modèle",
   "agentProfile": "Profil de l'agent",
-  "appInitializing": "LobeChat est en cours de démarrage, veuillez patienter...",
+  "appInitializing": "MacoChat est en cours de démarrage, veuillez patienter...",
   "archive": "Archiver",
   "autoGenerate": "Générer automatiquement",
   "autoGenerateTooltip": "Générer automatiquement la description de l'agent basée sur les suggestions",
@@ -132,9 +132,9 @@
   "telemetry": {
     "allow": "Autoriser",
     "deny": "Refuser",
-    "desc": "Nous aimerions recueillir anonymement des informations sur votre utilisation afin de nous aider à améliorer LobeChat et à vous offrir une meilleure expérience produit. Vous pouvez désactiver cette fonctionnalité à tout moment dans les paramètres - À propos.",
+    "desc": "Nous aimerions recueillir anonymement des informations sur votre utilisation afin de nous aider à améliorer MacoChat et à vous offrir une meilleure expérience produit. Vous pouvez désactiver cette fonctionnalité à tout moment dans les paramètres - À propos.",
     "learnMore": "En savoir plus",
-    "title": "Aider LobeChat à s'améliorer"
+    "title": "Aider MacoChat à s'améliorer"
   },
   "temp": "Temporaire",
   "updateAgent": "Mettre à jour les informations de l'agent",
