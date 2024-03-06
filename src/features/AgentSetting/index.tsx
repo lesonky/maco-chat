@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import AgentConfig from './AgentConfig';
 import AgentMeta from './AgentMeta';
-import AgentPlugin from './AgentPlugin';
+// import AgentPlugin from './AgentPlugin';
 import AgentPrompt from './AgentPrompt';
-import AgentTTS from './AgentTTS';
+// import AgentTTS from './AgentTTS';
 import StoreUpdater, { StoreUpdaterProps } from './StoreUpdater';
 import { Provider, createStore } from './store';
 
@@ -17,8 +17,6 @@ const AgentSettings = memo<AgentSettingsProps>((props) => {
       <AgentPrompt />
       <AgentMeta />
       <AgentConfig />
-      <AgentTTS />
-      <AgentPlugin />
     </Provider>
   );
 });
