@@ -12,6 +12,7 @@ import {
 import { ModelProvider } from '../types/type';
 import { AgentRuntimeError } from '../utils/createError';
 import { debugStream } from '../utils/debugStream';
+import { insertBlankDialogues } from '../utils/insetBlankMessage';
 import { parseDataUri } from '../utils/uriParser';
 
 type GoogleChatErrors = GoogleChatError[];
@@ -137,7 +138,9 @@ export class LobeGoogleAI implements LobeRuntimeAI {
     messages: OpenAIChatMessage[],
     model: string,
   ): { contents: Content[]; model: string } => {
-    const contents = messages
+    const fixedMessages = insertBlankDialogues(messages);
+
+    const contents = fixedMessages
       .filter((message) => message.role === 'user' || message.role === 'assistant')
       .map((msg) => this.convertOAIMessagesToGoogleMessage(msg));
 
