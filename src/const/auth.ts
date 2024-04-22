@@ -1,4 +1,4 @@
-export const LOBE_CHAT_AUTH_HEADER = 'X-lobe-chat-auth';
+export const MACO_CHAT_AUTH_HEADER = 'X-lobe-chat-auth';
 
 export const OAUTH_AUTHORIZED = 'X-oauth-authorized';
 

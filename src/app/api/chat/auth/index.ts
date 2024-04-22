@@ -1,5 +1,5 @@
 import { createErrorResponse } from '@/app/api/errorResponse';
-import { JWTPayload, LOBE_CHAT_AUTH_HEADER, OAUTH_AUTHORIZED } from '@/const/auth';
+import { JWTPayload, MACO_CHAT_AUTH_HEADER, OAUTH_AUTHORIZED } from '@/const/auth';
 import { AgentRuntimeError, ChatCompletionErrorPayload } from '@/libs/agent-runtime';
 import { ChatErrorType } from '@/types/fetch';
 
@@ -18,7 +18,7 @@ export const checkAuth =
 
     try {
       // get Authorization from header
-      const authorization = req.headers.get(LOBE_CHAT_AUTH_HEADER);
+      const authorization = req.headers.get(MACO_CHAT_AUTH_HEADER);
       const oauthAuthorized = !!req.headers.get(OAUTH_AUTHORIZED);
 
       if (!authorization) throw AgentRuntimeError.createError(ChatErrorType.Unauthorized);

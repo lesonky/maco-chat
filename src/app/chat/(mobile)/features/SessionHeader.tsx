@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import McLogo from '@/components/McLogo';
 import { MOBILE_HEADER_ICON_SIZE } from '@/const/layoutTokens';
-import SyncStatusInspector from '@/features/SyncStatusInspector';
 import { useGlobalStore } from '@/store/global';
 import { commonSelectors } from '@/store/global/selectors';
 import { useSessionStore } from '@/store/session';
@@ -23,6 +23,7 @@ export const useStyles = createStyles(({ css, token }) => ({
 }));
 
 const Header = memo(() => {
+  const { styles } = useStyles();
   const [createSession] = useSessionStore((s) => [s.createSession]);
   const router = useRouter();
   const avatar = useGlobalStore(commonSelectors.userAvatar);
@@ -33,8 +34,7 @@ const Header = memo(() => {
           <div onClick={() => router.push('/settings')}>
             {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
           </div>
-          <Logo type={'text'} />
-          <SyncStatusInspector placement={'bottom'} />
+          <McLogo className={styles.logo} size={36} type={'text'} />
         </Flexbox>
       }
       right={

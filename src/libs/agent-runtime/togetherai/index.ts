@@ -11,7 +11,7 @@ export const LobeTogetherAI = LobeOpenAICompatibleFactory({
   constructorOptions: {
     defaultHeaders: {
       'HTTP-Referer': 'https://chat-preview.lobehub.com',
-      'X-Title': 'Lobe Chat',
+      'X-Title': 'Maco Chat',
     },
   },
   debug: {

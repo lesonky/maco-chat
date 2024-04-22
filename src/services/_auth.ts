@@ -1,4 +1,4 @@
-import { JWTPayload, LOBE_CHAT_AUTH_HEADER } from '@/const/auth';
+import { JWTPayload, MACO_CHAT_AUTH_HEADER } from '@/const/auth';
 import { ModelProvider } from '@/libs/agent-runtime';
 import { useGlobalStore } from '@/store/global';
 import { modelConfigSelectors, settingsSelectors } from '@/store/global/selectors';
@@ -66,5 +66,5 @@ export const createHeaderWithAuth = async (params?: AuthParams): Promise<Headers
   const token = await createAuthTokenWithPayload(payload);
 
   // eslint-disable-next-line no-undef
-  return { ...params?.headers, [LOBE_CHAT_AUTH_HEADER]: token };
+  return { ...params?.headers, [MACO_CHAT_AUTH_HEADER]: token };
 };

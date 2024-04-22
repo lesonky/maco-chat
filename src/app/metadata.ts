@@ -6,7 +6,7 @@ import { OFFICIAL_URL } from '@/const/url';
 
 import pkg from '../../package.json';
 
-const title = 'LobeChat';
+const title = 'MacoChat';
 const { description, homepage } = pkg;
 
 const { SITE_URL = OFFICIAL_URL } = getServerConfig();
@@ -22,9 +22,9 @@ const metadata: Metadata = {
   },
   description,
   icons: {
-    apple:'icons/apple-touch-icon.png',
-    icon:'favicon.ico',
-    shortcut:'favicon-32x32.ico',
+    apple: 'icons/apple-touch-icon.png',
+    icon: 'favicon.ico',
+    shortcut: 'favicon-32x32.ico',
   },
   manifest: noManifest ? undefined : '/manifest.json',
   metadataBase: new URL(SITE_URL),
@@ -53,7 +53,7 @@ const metadata: Metadata = {
 
   title: {
     default: title,
-    template: '%s · LobeChat',
+    template: '%s · MacoChat',
   },
   twitter: {
     card: 'summary_large_image',

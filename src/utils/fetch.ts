@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 
-import { LOBE_CHAT_OBSERVATION_ID, LOBE_CHAT_TRACE_ID } from '@/const/trace';
+import { MACO_CHAT_OBSERVATION_ID, MACO_CHAT_TRACE_ID } from '@/const/trace';
 import { ErrorResponse, ErrorType } from '@/types/fetch';
 import { ChatMessageError } from '@/types/message';
 
@@ -91,8 +91,8 @@ export const fetchSSE = async (fetchFn: () => Promise<Response>, options: FetchS
     }
   }
 
-  const traceId = response.headers.get(LOBE_CHAT_TRACE_ID);
-  const observationId = response.headers.get(LOBE_CHAT_OBSERVATION_ID);
+  const traceId = response.headers.get(MACO_CHAT_TRACE_ID);
+  const observationId = response.headers.get(MACO_CHAT_OBSERVATION_ID);
   await options?.onFinish?.(output, { observationId, traceId, type: finishedType });
 
   return returnRes;

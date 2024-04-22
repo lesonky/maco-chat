@@ -1,4 +1,4 @@
-import { LOBE_CHAT_ACCESS_CODE, OPENAI_API_KEY_HEADER_KEY, OPENAI_END_POINT } from '@/const/fetch';
+import { MACO_CHAT_ACCESS_CODE, OPENAI_API_KEY_HEADER_KEY, OPENAI_END_POINT } from '@/const/fetch';
 import { useGlobalStore } from '@/store/global';
 import { modelConfigSelectors, settingsSelectors } from '@/store/global/selectors';
 
@@ -13,7 +13,7 @@ export const createHeaderWithOpenAI = (header?: HeadersInit): HeadersInit => {
   // eslint-disable-next-line no-undef
   return {
     ...header,
-    [LOBE_CHAT_ACCESS_CODE]: settingsSelectors.password(useGlobalStore.getState()),
+    [MACO_CHAT_ACCESS_CODE]: settingsSelectors.password(useGlobalStore.getState()),
     [OPENAI_API_KEY_HEADER_KEY]: apiKey,
     [OPENAI_END_POINT]: endpoint,
   };

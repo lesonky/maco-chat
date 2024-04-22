@@ -2,8 +2,8 @@ import { getServerConfig } from '@/config/server';
 import { JWTPayload } from '@/const/auth';
 import { INBOX_SESSION_ID } from '@/const/session';
 import {
-  LOBE_CHAT_OBSERVATION_ID,
-  LOBE_CHAT_TRACE_ID,
+  MACO_CHAT_OBSERVATION_ID,
+  MACO_CHAT_TRACE_ID,
   TracePayload,
   TraceTagMap,
 } from '@/const/trace';
@@ -217,8 +217,8 @@ export const createTraceOptions = (
       },
     },
     headers: {
-      [LOBE_CHAT_OBSERVATION_ID]: generation?.id,
-      [LOBE_CHAT_TRACE_ID]: trace?.id,
+      [MACO_CHAT_OBSERVATION_ID]: generation?.id,
+      [MACO_CHAT_TRACE_ID]: trace?.id,
     },
   };
 };
