@@ -1,4 +1,4 @@
-import { SvgProps, useCdnFn } from '@lobehub/ui';
+import { SvgProps } from '@lobehub/ui';
 import Img from '@lobehub/ui/es/Img';
 import { useTheme } from 'antd-style';
 import { type ReactNode, memo } from 'react';
@@ -6,7 +6,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import Divider from './Divider';
 import LogoText from './LogoText';
-import { LOGO_3D, LOGO_FLAT, useStyles } from './style';
+import { useStyles } from './style';
 
 export interface LogoProps extends Partial<SvgProps> {
   /**
@@ -33,20 +33,21 @@ export interface LogoProps extends Partial<SvgProps> {
 const Logo = memo<LogoProps>(
   ({ type = 'text', text = 'MacoChat', size = 32, style, extra, className, ...rest }) => {
     const theme = useTheme();
-    const genCdnUrl = useCdnFn();
+    // const genCdnUrl = useCdnFn();
     const { styles } = useStyles();
     let logoComponent: ReactNode;
+    const logoUrl = 'https://pub-80127a367cfb4fed90be626d6405ea6a.r2.dev/maco_logo.jpg';
 
     switch (type) {
       case '3d': {
         logoComponent = (
-          <Img alt="MacoChat" height={size} src={genCdnUrl(LOGO_3D)} style={style} width={size} />
+          <Img alt="MacoChat" height={size} src={logoUrl} style={style} width={size} />
         );
         break;
       }
       case 'flat': {
         logoComponent = (
-          <Img alt="MacoChat" height={size} src={genCdnUrl(LOGO_FLAT)} style={style} width={size} />
+          <Img alt="MacoChat" height={size} src={logoUrl} style={style} width={size} />
         );
         break;
       }
@@ -66,7 +67,7 @@ const Logo = memo<LogoProps>(
       case 'combine': {
         logoComponent = (
           <>
-            <Img alt="lobehub" height={size} src={genCdnUrl(LOGO_3D)} width={size} />
+            <Img alt="lobehub" height={size} src={logoUrl} width={size} />
             <LogoText
               style={{ height: size, marginLeft: Math.round(size / 4), width: 'auto' }}
               text={text}
