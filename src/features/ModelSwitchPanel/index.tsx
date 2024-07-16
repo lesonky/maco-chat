@@ -49,7 +49,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
     isEqual,
   );
 
-  const items = useMemo(() => {
+  const items: any = useMemo(() => {
     const getModelItems = (provider: ModelProviderCard) => {
       const items = provider.chatModels.map((model) => ({
         key: model.id,

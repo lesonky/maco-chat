@@ -1,4 +1,5 @@
 import { Icon, Tooltip } from '@lobehub/ui';
+import { Avatar } from 'antd';
 import { createStyles } from 'antd-style';
 import { LucideEye, LucidePaperclip, ToyBrick } from 'lucide-react';
 import numeral from 'numeral';
@@ -10,7 +11,6 @@ import { Center, Flexbox } from 'react-layout-kit';
 import { ChatModelCard } from '@/types/llm';
 
 import ModelIcon from '../ModelIcon';
-import ModelProviderIcon from '../ModelProviderIcon';
 
 const useStyles = createStyles(({ css, token }) => ({
   custom: css`
@@ -60,7 +60,7 @@ const formatTokenNumber = (num: number): string => {
   if (num < 1000) return '1K';
   const kiloToken = Math.floor(num / 1000);
   return kiloToken < 1000 ? `${kiloToken}K` : `${Math.floor(kiloToken / 1000)}M`;
-}
+};
 
 interface ModelInfoTagsProps extends ChatModelCard {
   directionReverse?: boolean;
@@ -145,13 +145,14 @@ interface ProviderItemRenderProps {
   provider: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const ProviderItemRender = memo<ProviderItemRenderProps>(({ provider }) => {
-  const { t } = useTranslation('modelProvider');
+  /* const { t } = useTranslation('modelProvider'); */
 
   return (
     <Flexbox align={'center'} gap={4} horizontal>
-      <ModelProviderIcon provider={provider} />
-      {t(`${provider}.title` as any)}
+      <Avatar src="https://pub-80127a367cfb4fed90be626d6405ea6a.r2.dev/maco_logo.jpg" />
+      MacoChat
     </Flexbox>
   );
 });
