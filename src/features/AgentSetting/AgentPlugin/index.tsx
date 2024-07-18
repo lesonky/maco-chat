@@ -62,6 +62,7 @@ const AgentPlugin = memo(() => {
 
   // 检查出不在 installedPlugins 中的插件
   const deprecatedList = userEnabledPlugins
+    // eslint-disable-next-line unicorn/prefer-array-some
     .filter((pluginId) => installedPlugins.findIndex((p) => p.identifier === pluginId) < 0)
     .map((id) => ({
       avatar: <Avatar avatar={'♻️'} />,

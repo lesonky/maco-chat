@@ -55,6 +55,7 @@ class _MessageModel extends BaseModel {
     const finalList: ChatMessage[] = [];
 
     const addItem = (item: ChatMessage) => {
+      // eslint-disable-next-line unicorn/prefer-array-some
       const isExist = finalList.findIndex((i) => item.id === i.id) > -1;
       if (!isExist) {
         finalList.push(item);

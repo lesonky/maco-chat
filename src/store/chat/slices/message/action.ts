@@ -548,6 +548,7 @@ export const chatMessage: StateCreator<
 
     const { coreProcessMessage } = get();
 
+    // eslint-disable-next-line unicorn/prefer-array-find
     const latestMsg = contextMessages.filter((s) => s.role === 'user').at(-1);
 
     if (!latestMsg) return;
